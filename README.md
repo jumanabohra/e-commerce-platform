@@ -2,7 +2,7 @@
 
 A simple full-stack e-commerce web application built with React (frontend) and Go / GORM / SQLite (backend). Supports browsing products, adding to cart, and placing orders.
 
-Features
+##Features
 
 Browse products with name, description, and price.
 
@@ -14,7 +14,7 @@ Checkout modal confirms order and clears cart.
 
 Backend APIs built in Go with SQLite for storage.
 
-Tech Stack
+##Tech Stack
 
 Frontend: React, Vite
 
@@ -22,27 +22,27 @@ Backend: Go, Chi router, GORM, SQLite
 
 Other: CORS handling, modal for checkout
 
-Getting Started
+##Getting Started
 Prerequisites
 
 Node.js >= 18
 
 Go >= 1.20
 
-Setup Frontend
+##Setup Frontend
 cd frontend
 npm install
 npm run dev
 
 Frontend runs at http://localhost:5173.
 
-Setup Backend
+##Setup Backend
 cd backend
 go run main.go
 
 Backend runs at http://localhost:8080.
 
-API Endpoints
+##API Endpoints
 
 GET /products – list all products
 
