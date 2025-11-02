@@ -6,10 +6,10 @@ export default function ProductList() {
     const [cart, setCart] = React.useState([]);
     const [showCheckout, setShowCheckout] = React.useState(false);
     const [sessionId, setSessionId] = React.useState(() => {
-        const existing = localStorage.getItem("sessionId");
+        const existing = sessionStorage.getItem("sessionId");
         if (existing) return existing;
         const newId = Math.floor(Math.random() * 1000000).toString();
-        localStorage.setItem("sessionId", newId);
+        sessionStorage.setItem("sessionId", newId);
         return newId;
       });
       
@@ -41,13 +41,9 @@ export default function ProductList() {
     const fetchCart = () => {
         fetch(`http://localhost:8080/cart/${sessionId}`)
           .then(res => res.json())
-          .then(data=>setCart(data || []))
+          .then(data => setCart(data || []))
           .catch(console.error);
       };
-
-    // const fetchProducts = () => {
-    //     fetch('http://localhost:8080/products').then(res => res.json()).then(setProducts).catch(console.error); 
-    // }
 
     const addToCart = (product) => {
         fetch("http://localhost:8080/cart/items", {
